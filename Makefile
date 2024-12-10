@@ -9,15 +9,10 @@
 # example usage:
 # make all
 
-.PHONY: all dats figs clean-dats clean-figs clean-all
+.PHONY: all dats figs clean clean-dats clean-figs clean-all
 
 # run entire analysis
 all: report/count_report.html
-
-# clean all, return the repo to the original state
-clean: clean-dats clean-figs
-	rm -f report/count_report.html
-	rm -rf report/count_report_files
 
 # count words
 dats: results/isles.dat \
@@ -81,7 +76,7 @@ clean-figs :
 		results/figure/last.png \
 		results/figure/sierra.png
 
-clean-all : clean-dats \
-	clean-figs
+# clean all, return the repo to the original state
+clean: clean-dats clean-figs
 	rm -f report/count_report.html
 	rm -rf report/count_report_files
