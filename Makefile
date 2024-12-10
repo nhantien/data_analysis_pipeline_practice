@@ -9,7 +9,7 @@
 # example usage:
 # make all
 
-.PHONY: all dats figs clean clean-dats clean-figs clean-all
+.PHONY: all dats figs clean clean-dats clean-figs
 
 # run entire analysis
 all: report/count_report.html
